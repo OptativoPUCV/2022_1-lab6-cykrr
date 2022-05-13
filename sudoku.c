@@ -161,6 +161,7 @@ Node* DFS(Node* initial, int* cont){
         pop(stack);
     }
 
+    printf("iteraciones: %d", *cont);
   return NULL;
 }
 
