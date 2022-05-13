@@ -92,8 +92,8 @@ int isSubmatrixValid(Node *n, int r, int c) {
 }
 
 int areSubMatricesValid(Node *node) {
-    int values[10]= {0};
     for(int i = 0; i < 9; i++) {
+        int values[10]= {0};
         for(int j = 0; j < 9; j++) {
             int k = 3*(i/3) + (j/3);
             int l = 3*(i%3) + (j%3) ;
