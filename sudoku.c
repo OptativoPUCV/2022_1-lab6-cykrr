@@ -132,7 +132,7 @@ int is_final(Node* n){
     for(int i = 0; i < 9; i++) {
         for(int j = 0; j < 9; j++) {
             int val = n->sudo[i][j];
-            if (!val) return 0;
+            if (val == 0) return 0;
         }
     }
     return 1;
