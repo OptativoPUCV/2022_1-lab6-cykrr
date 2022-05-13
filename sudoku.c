@@ -157,13 +157,7 @@ Node* DFS(Node* initial, int* cont){
         }
 
         for(Node *i = first(ady); i != NULL; i = next(ady)) {
-            if (i->visited == 0) {
-                i->visited = 1;
-                i->parent = aux;
-                push(stack, i);
-            }
-        }
-        
+            push(stack, i);
         (*cont)++;
     }
 

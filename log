@@ -329,3 +329,24 @@ vie 13 may 2022 14:00:10 -04:
  tests:  7|1
 total_score: 55/70
 88361e5
+vie 13 may 2022 14:01:24 -04: 
+ sudoku.c | 6 ------
+ 1 file changed, 6 deletions(-)
+test.c: En la función ‘DFS’:
+test.c:245:5: error: ‘main’ generalmente es una función que no es static [-Werror=main]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:262:1: error: expected declaration or statement at end of input
+  262 | }
+      | ^
+test.c:263: error: el control alcanza el final de una función que no es void [-Werror=return-type]
+En el nivel principal:
+test.c:245:5: error: se define ‘main’ pero no se usa [-Werror=unused-function]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:7:8: error: se define ‘_strdup’ pero no se usa [-Werror=unused-function]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+cc1: todos los avisos se tratan como errores
+Compilation failed
+9116968
