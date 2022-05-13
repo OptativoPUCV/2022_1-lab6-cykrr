@@ -53,7 +53,11 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-
+    int nums[10];
+    for(int i = 0; i<9; i++) {
+        if (nums[n->sudo[i][0]] == 1 && n->sudo[i][0] == 1) return 0;
+        nums[n->sudo[i][0]]  = 1;
+    }
     return 1;
 }
 
