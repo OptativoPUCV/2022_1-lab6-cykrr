@@ -150,8 +150,8 @@ Node* DFS(Node* initial, int* cont){
             printf("Final:\n");
             show(aux, 9);
             putchar('\n');
-        }
             return aux;
+        }
 
         for(Node *i = first(ady); i != NULL; i = next(ady)) {
             if (i->visited == 0) {
