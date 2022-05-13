@@ -91,27 +91,40 @@ int isSubmatrixValid(Node *n, int r, int c) {
     return 1;
 }
 
+int areSubMatricesValid(Node *node) {
+    int values[10]= {0};
+    for(int i = 0; i < 9; i++) {
+        for(int j = 0; j < 9; j++) {
+            int k = 3*(i/3) + (j/3);
+            int l = 3*(i%3) + (j%3) ;
+            int val = node->sudo[k][l];
+            if (val && values[val])  return 0;
+            values[val] = 1;
+        }
+    }
+    return 1;
+}
+
 int is_valid(Node* n){
-  for(int i = 0; i < 9; i++)
-  {
-    int row[10] = {0};
-    int col[10] = {0};
-    int sub[10] = {0};
+  for(int i = 0; i < 9; i++) {
+    int rows[10] = {0};
+    int cols[10] = {0};
 
-    for(int j = 0; j < 9; j++)
-    {
-      int row_value = n->sudo[i][j];
-      int col_value = n->sudo[j][i];
-      int sub_value = n->sudo[3*(i/3)+(j/3)][3*(i%3)+(j%3)];
+    for(int j = 0; j < 9; j++) {
+      int rowValue = n->sudo[i][j];
+      int colValue = n->sudo[j][i];
 
-      if(row[row_value] == 1 || col[col_value] == 1 || sub[sub_value] == 1)
+
+      if(rows[rowValue] || cols[colValue])
         return 0;
 
-      if(row_value != 0) row[row_value] = 1;
-      if(col_value != 0) col[col_value] = 1;
-      if(sub_value != 0) sub[sub_value] = 1;
+      if(rowValue != 0) rows[rowValue] = 1;
+      if(colValue != 0) cols[colValue] = 1;
     }
+
+
   }
+  if (!areSubMatricesValid(n)) return 0;
 
   return 1;
 }
