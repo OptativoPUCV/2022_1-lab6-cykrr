@@ -134,12 +134,12 @@ Node* DFS(Node* initial, int* cont){
 
 
 
-
+/*
 
 int main( int argc, char *argv[] )
 {
 
-    /* Initial test file not valid in submatrix */
+//     Initial test file not valid in submatrix 
     Node* initial= read_file("lol.txt");
 
     show(initial, 9);
@@ -166,3 +166,4 @@ int main( int argc, char *argv[] )
 
   return 0;
 }
+*/
