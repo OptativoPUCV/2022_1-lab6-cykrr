@@ -145,7 +145,6 @@ Node* DFS(Node* initial, int* cont){
     Node *aux = NULL;
     while (!is_empty(stack)) {
         aux = top(stack);
-        pop(stack);
         List *ady = get_adj_nodes(aux);
         if (is_final(aux))
             return aux;
@@ -159,6 +158,7 @@ Node* DFS(Node* initial, int* cont){
             }
         }
         
+        pop(stack);
     }
 
   return NULL;
