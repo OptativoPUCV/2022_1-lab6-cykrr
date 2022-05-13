@@ -147,9 +147,11 @@ Node* DFS(Node* initial, int* cont){
         aux = top(stack);
         pop(stack);
         List *ady = get_adj_nodes(aux);
+        if (is_final(aux))
+            return aux;
+
         for(Node *i = first(ady); i != NULL; i = next(ady)) {
             if (i->visited == 0) {
-                if (is_final(i)) return i;
                 i->visited = 1;
                 (*cont)++;
                 i->parent = aux;
