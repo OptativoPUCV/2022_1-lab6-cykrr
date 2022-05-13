@@ -126,13 +126,12 @@ List* get_adj_nodes(Node* n){
                if (!n->sudo[i][j]) { 
                     for (int k = 1; k < 10; k++) {
                         n->sudo[i][j] = k;
-                         if (is_valid(n)) {
-                            Node *adj = copy(n);
+                        Node *adj = copy(n);
+                         if (is_valid(adj)) {
                             pushBack(list, adj);
-                     }
-                }
-                n->sudo[i][j] = 0;
-                return list;
+                        }
+                    }
+                    return list;
             }
         }
     }
