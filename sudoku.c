@@ -11,6 +11,16 @@ typedef struct Node{
    struct Node *parent;
 }Node;
 
+int is_final(Node* n){
+    for(int i = 0; i < 9; i++) {
+        for(int j = 0; j < 9; j++) {
+            int val = n->sudo[i][j];
+            if (val == 0) return 0;
+        }
+    }
+    return 1;
+}
+
 void show(Node *n, int size) {
     for (int i = 0; i < size; i++){
         for (int j = 0; j < size; j++) {
@@ -104,6 +114,8 @@ List* get_adj_nodes(Node* n){
     show(n, 9);
     printf("Valid? :");
     printf(is_valid(n) ? "yes":"no");
+    printf("Final? :");
+    printf(is_final(n) ? "yes":"no");
     putchar('\n');
 
     List* list=createList();
@@ -128,15 +140,6 @@ List* get_adj_nodes(Node* n){
 }
 
 
-int is_final(Node* n){
-    for(int i = 0; i < 9; i++) {
-        for(int j = 0; j < 9; j++) {
-            int val = n->sudo[i][j];
-            if (val == 0) return 0;
-        }
-    }
-    return 1;
-}
 
 Node* DFS(Node* initial, int* cont){
     Stack * stack = createStack();
