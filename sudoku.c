@@ -3,9 +3,18 @@
 #include "list.h"
 
 
+
 typedef struct{
    int sudo[9][9];
 }Node;
+
+void show(Node *n) {
+    for (int i = 0; i < 9; i++){
+        for (int j = 0; j < 9; j++)
+            printf("%d ", n->sudo[i][j]);
+        putchar('\n');
+    }
+}
 
 Node* createNode(){
   Node* n=(Node*) malloc(sizeof(Node));
