@@ -16,7 +16,7 @@ void show(Node *n) {
             else putchar (' ');
 
         }
-        if ((i+1) % 2 == 0) {
+        if ((i+1) % 3 == 0) {
             putchar('\n');
             for(int i = 0; i < 18; i++) putchar ('-');
         }
