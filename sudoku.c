@@ -151,6 +151,9 @@ Node* DFS(Node* initial, int* cont){
             printf("Final:\n");
             show(aux, 9);
             putchar('\n');
+            printf("Is ^ valid?: ");
+            printf(is_valid(initial) ? "yes":"no");
+
             return aux;
         }
         List *ady = get_adj_nodes(aux);
