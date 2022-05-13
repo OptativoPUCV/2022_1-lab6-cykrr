@@ -60,6 +60,9 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n){
     show(n);
+    printf("Valid? :");
+    printf(is_valid(n) ? "yes":"no");
+    putchar('\n');
     List* list=createList();
     if (!is_valid(n)) return NULL;
     for (int i = 0; i < 9; i++) {
