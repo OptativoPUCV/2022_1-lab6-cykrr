@@ -2,3 +2,25 @@ Fri May 13 07:30:22 -04 2022:
  tests:  0|5
 total_score: 0/70
 6ff4706
+Fri May 13 07:39:43 -04 2022: 
+ sudoku.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+In file included from test.c:5:
+./sudoku.c:54:38: error: incompatible pointer types returning 'Node *' from a function with result type 'List *' (aka 'struct List *') [-Werror,-Wincompatible-pointer-types]
+            if (!is_valid(n)) return n;
+                                     ^
+./sudoku.c:53:11: error: unused variable 'list' [-Werror,-Wunused-variable]
+    List* list=createList();
+          ^
+./sudoku.c:62:5: error: non-void function does not return a value in all control paths [-Werror,-Wreturn-type]
+    }
+    ^
+./sudoku.c:63:5: error: expected identifier or '('
+    return list;
+    ^
+./sudoku.c:64:1: error: extraneous closing brace ('}')
+}
+^
+5 errors generated.
+Compilation failed
+2817780
