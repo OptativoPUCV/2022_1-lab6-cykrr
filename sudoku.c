@@ -16,9 +16,9 @@ void show(Node *n) {
             else putchar (' ');
 
         }
-        if (i % 2 == 0) {
+        if ((i+2) % 2 == 0) {
             putchar('\n');
-            for(int i = 0; i < 9; i++) putchar ('-');
+            for(int i = 0; i < 18; i++) putchar ('-');
         }
         putchar('\n');
     }
