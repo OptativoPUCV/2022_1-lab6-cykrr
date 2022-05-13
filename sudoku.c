@@ -62,11 +62,13 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
     // para cada fila 
-    int nums[10] = {0};
-    for(int i = 0; i<9; i++) {
-        int val = n->sudo[0][i];
-        if (val && nums[val]) return 0;
-        else nums[val] = 1;
+    for(int j = 0; j < 0; j++) {
+        int nums[10] = {0};
+        for(int i = 0; i<9; i++) {
+            int val = n->sudo[j][i];
+            if (val && nums[val]) return 0;
+            else nums[val] = 1;
+        }
     }
     return 1;
 }
