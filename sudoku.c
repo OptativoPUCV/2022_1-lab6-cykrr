@@ -61,6 +61,7 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
+    show(n);
     // para cada fila 
     for(int i = 0; i<9; i++) {
         int nums[10] = {0};
@@ -76,7 +77,6 @@ int is_valid(Node* n){
 
 
 List* get_adj_nodes(Node* n){
-    show(n);
     printf("Valid? :");
     printf(is_valid(n) ? "yes":"no");
     putchar('\n');
