@@ -65,3 +65,9 @@ Fri May 13 08:00:06 -04 2022:
  1 file changed, 5 insertions(+), 1 deletion(-)
  tests:  0|0
 97cc210
+Fri May 13 08:00:38 -04 2022: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|4
+total_score: 15/70
+e1fed70
