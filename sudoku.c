@@ -5,8 +5,10 @@
 
 
 
-typedef struct{
+typedef struct Node{
    int sudo[9][9];
+   int visited;
+   struct Node *parent;
 }Node;
 
 void show(Node *n, int size) {
@@ -27,6 +29,8 @@ void show(Node *n, int size) {
 
 Node* createNode(){
   Node* n=(Node*) malloc(sizeof(Node));
+  (*n).visited = 0;
+  (*n).parent = NULL;
   return n;
 }
 
@@ -135,6 +139,26 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
+    *cont = 0;
+    Stack * stack = createStack();
+    push(stack, initial);
+    Node *aux = NULL;
+    while (!is_empty(stack)) {
+        aux = top(stack);
+        pop(stack);
+        List *ady = get_adj_nodes(aux);
+        for(Node *i = first(ady); i != NULL; i = next(ady)) {
+            if (i->visited == 0) {
+                if (is_final(i)) return i;
+                i->visited = 1;
+                (*cont)++;
+                i->parent = aux;
+                push(stack, i);
+            }
+        }
+        
+    }
+
   return NULL;
 }
 
