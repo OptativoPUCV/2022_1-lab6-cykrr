@@ -12,8 +12,8 @@ void show(Node *n) {
     for (int i = 0; i < 9; i++){
         for (int j = 0; j < 9; j++) {
             printf("%d", n->sudo[i][j]);
-            if ( j % 3 == 0 ) putchar (' ');
-            else putchar ('|');
+            if ( j % 3 == 0 ) putchar ('|');
+            else putchar (' ');
 
         }
         putchar('\n');
