@@ -92,21 +92,28 @@ int isSubmatrixValid(Node *n, int r, int c) {
 }
 
 int is_valid(Node* n){
-    // para cada fila 
-    for(int j = 0; j < 9; j++) {
-        int nums[10] = {0};
-        for(int i = 0; i<9; i++) {
-            int val = n->sudo[j][i];
-            if (val && nums[val]) return 0;
-            else nums[val] = 1;
-        }
+  for(int i = 0; i < 9; i++)
+  {
+    int row[10] = {0};
+    int col[10] = {0};
+    int sub[10] = {0};
+
+    for(int j = 0; j < 9; j++)
+    {
+      int row_value = n->sudo[i][j];
+      int col_value = n->sudo[j][i];
+      int sub_value = n->sudo[3*(i/3)+(j/3)][3*(i%3)+(j%3)];
+
+      if(row[row_value] == 1 || col[col_value] == 1 || sub[sub_value] == 1)
+        return 0;
+
+      if(row_value != 0) row[row_value] = 1;
+      if(col_value != 0) col[col_value] = 1;
+      if(sub_value != 0) sub[sub_value] = 1;
     }
-    for (int k = 0; k < 2; k++) {
-        for(int l = 0; l < 2; l++) {
-            if(isSubmatrixValid(n, k, l) == 0) return 0;
-        }
-    }
-    return 1;
+  }
+
+  return 1;
 }
 
 
