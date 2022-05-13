@@ -158,6 +158,8 @@ Node* DFS(Node* initial, int* cont){
 
         for(Node *i = first(ady); i != NULL; i = next(ady)) {
             push(stack, i);
+        }
+
         (*cont)++;
     }
 
