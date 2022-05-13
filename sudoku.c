@@ -10,8 +10,12 @@ typedef struct{
 
 void show(Node *n) {
     for (int i = 0; i < 9; i++){
-        for (int j = 0; j < 9; j++)
-            printf("%d ", n->sudo[i][j]);
+        for (int j = 0; j < 9; j++) {
+            printf("%d", n->sudo[i][j]);
+            if ( i % 2 == 0 ) putchar (' ');
+            else putchar ('|');
+
+        }
         putchar('\n');
     }
 }
