@@ -146,7 +146,11 @@ Node* DFS(Node* initial, int* cont){
         aux = top(stack);
         pop(stack);
         List *ady = get_adj_nodes(aux);
-        if (is_final(aux))
+        if (is_final(aux)) {
+            printf("Final:\n");
+            show(aux, 9);
+            putchar('\n');
+        }
             return aux;
 
         for(Node *i = first(ady); i != NULL; i = next(ady)) {
